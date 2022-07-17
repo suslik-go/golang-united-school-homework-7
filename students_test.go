@@ -2,7 +2,6 @@ package coverage
 
 import (
 	"os"
-	"reflect"
 	//"errors"
 	"testing"
 	"time"
