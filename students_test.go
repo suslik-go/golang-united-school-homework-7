@@ -71,7 +71,7 @@ func TestSwap(t *testing.T) {
 /*New creates a matrix from a string.*/
 func TestNew(t *testing.T) {
 
-	test1 := `78	12 45
+	test1 := `78 12 45
 	4 45 78 
 	78 2 35`
 
@@ -81,8 +81,6 @@ func TestNew(t *testing.T) {
 		t.Errorf("Failed New function")
 	}
 
-
-	
 }
 
 
@@ -125,11 +123,18 @@ func TestCols(t *testing.T) {
 
 /*Set sets the value of the matrix at point row, col.*/
 func TestSet(t *testing.T) {
-	var matrix Matrix
+	matrix := Matrix {
+		rows: 3,
+		cols: 3,
+		data: []int{
+			12, 54,78,
+			78, 12, 56,
+			78, 89, 45,
+		},
+	}
 
-	matrix.Set(2,5,10)
-
-	if matrix.data[2 + 5 *2] != 10 {
+	if (!matrix.Set(2,2,10)){
 		t.Errorf("Failed Set function")
 	}
+
 }
